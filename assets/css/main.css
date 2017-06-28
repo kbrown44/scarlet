@@ -1,5 +1,6 @@
 @keyframes spin1 {  from {transform: rotate(40deg);} to {transform: rotate(45deg);} }
 @keyframes spin2 {  from {transform: rotate(45deg);} to {transform: rotate(40deg);} }
+@keyframes move {  from {margin: 2em 0 3em 0;} to {margin: 2em 20em 3em 0;} }
 
 a {
     text-decoration: none;
@@ -59,11 +60,18 @@ body {
 
 
 #logo {
-  width: 8%;
-  margin: 1em 0 1em 48%;
+  width: 16em;
+  margin: 2em 0 3em 0;
   
 }
 
   #logo:hover {
-    opacity: 0.8;
+    opacity: 0.85;
   }
+
+  #logo:active {
+    animation: move 0.6s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
