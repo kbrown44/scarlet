@@ -1,6 +1,7 @@
 @keyframes spin1 {  from {transform: rotate(40deg);} to {transform: rotate(45deg);} }
 @keyframes spin2 {  from {transform: rotate(45deg);} to {transform: rotate(40deg);} }
-@keyframes move {  from {margin: 2em 0 3em 0;} to {margin: 2em 20em 3em 0;} }
+@keyframes spin3 {  from {transform: rotate(0deg);} to {transform: rotate(-2deg);} }
+@keyframes spin4 {  from {transform: rotate(-2deg);} to {transform: rotate(0deg);} }
 
 a {
     text-decoration: none;
@@ -63,15 +64,45 @@ body {
   width: 16em;
   margin: 2em 0 3em 0;
   
+    animation: spin4 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  
 }
 
   #logo:hover {
-    opacity: 0.85;
-  }
-
-  #logo:active {
-    animation: move 0.6s;
+    animation: spin3 0.5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
+    animation-iteration-count: 1;
   }
+
+.menuText {
+  color: #fff;
+  opacity: 0.9;
+  font-family: 'Audiowide', cursive;
+  font-size: 1.5em; 
+  font-weight: 100;
+  
+    animation: spin4 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  
+}
+
+.menuText:hover {
+    animation: spin3 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+#menuTexts {
+  display: none;
+  width: 100%;
+  padding: 0.5em 0 0.5em 0;
+}
+
 
