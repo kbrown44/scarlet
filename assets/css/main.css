@@ -72,6 +72,7 @@ body {
 }
 
   #logo:hover {
+    cursor: pointer;
     animation: spin3 0.5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
