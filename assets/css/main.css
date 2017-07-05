@@ -1,9 +1,9 @@
 /* ---------- ANIMATIONS ---------- */
 
-@keyframes spin1 {  from {transform: rotate(35deg);} to {transform: rotate(45deg);} }
-@keyframes spin2 {  from {transform: rotate(45deg);} to {transform: rotate(35deg);} }
-@keyframes spin3 {  from {transform: rotate(0deg);} to {transform: rotate(-2deg);} }
-@keyframes spin4 {  from {transform: rotate(-2deg);} to {transform: rotate(0deg);} }
+@keyframes spin1 {  from {transform: rotate(0deg);} to {transform: rotate(45deg);} }
+@keyframes spin2 {  from {transform: rotate(45deg);} to {transform: rotate(0deg);} }
+@keyframes spin3 {  from {transform: rotate(0deg);} to {transform: rotate(-3deg);} }
+@keyframes spin4 {  from {transform: rotate(-3deg);} to {transform: rotate(0deg);} }
 
 
 
@@ -17,16 +17,23 @@ body {
     background-color: black;
 }
 
+#gallery {
+  padding: 3.5em 0 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .picDiv {
   width: 200px;
-  height: 600px;
+  height: 200px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: left;
   border: 4px solid #fff;
   transform: rotate(45deg);
-  float: left;
-  margin: 0 0 1em 1em;
+
+  margin: 0 3em 6em 3em;
   
   animation: spin1 0.2s;
   animation-timing-function: ease;
@@ -67,7 +74,7 @@ body {
 }
 
 .menuText:hover {
-    animation: spin3 0.5s;
+    animation: spin3 0.4s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;

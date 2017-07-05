@@ -41,7 +41,7 @@ logoShift.onmouseout = function () {
 }
 
 logoShift.onmouseover = function () {
-  logoShift.style.animation = "spin3 0.4s";
+  logoShift.style.animation = "spin3 0.3s";
   logoShift.style.animationFillMode = "forwards";
   logoShift.style.animationTimingFunction = "ease";
   logoShift.style.animationIterationCount = "1";

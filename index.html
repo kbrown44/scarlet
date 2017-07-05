@@ -21,6 +21,9 @@
         </div>
       </div>
       </center>
+    <div id="gallery">
+    
+    </div>
       
 
     
@@ -36,7 +39,7 @@
         var i = "1";
         
         $(function imageloop(){
-          $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + i + fileextension + ")" ).appendTo("body");
+          $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + i + fileextension + ")" ).appendTo("#gallery");
           //$("<img />").attr('src', dir + i + fileextension ).appendTo("#testDiv" + i);
           if (i<15){
             i++;
