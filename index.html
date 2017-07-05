@@ -7,6 +7,7 @@
     <link rel="icon" href="images/icon/favicon.png">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
     
   <body>
@@ -22,32 +23,31 @@
       </div>
       </center>
       
-    <a href="#1"><div id="testDiv1"></div></a>
-    <a href="#2"><div id="testDiv2"></div></a>
-    <a href="#3"><div id="testDiv1"></div></a>
-    <a href="#4"><div id="testDiv2"></div></a>
-    <a href="#5"><div id="testDiv1"></div></a>
-    <a href="#6"><div id="testDiv2"></div></a>
-    <a href="#1"><div id="testDiv1"></div></a>
-    <a href="#2"><div id="testDiv2"></div></a>
-    <a href="#3"><div id="testDiv1"></div></a>
-    <a href="#4"><div id="testDiv2"></div></a>
-    <a href="#5"><div id="testDiv1"></div></a>
-    <a href="#6"><div id="testDiv2"></div></a>
-    <a href="#5"><div id="testDiv1"></div></a>
-    <a href="#6"><div id="testDiv2"></div></a>
-    <a href="#1"><div id="testDiv1"></div></a>
-    <a href="#2"><div id="testDiv2"></div></a>
-    <a href="#3"><div id="testDiv1"></div></a>
-    <a href="#4"><div id="testDiv2"></div></a>
-    <a href="#5"><div id="testDiv1"></div></a>
-    <a href="#6"><div id="testDiv2"></div></a>
+
+    
     <!-- SCRIPTS -->
     <script src="assets/js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        var dir = "images/gallery/"; // folder location
+        var fileextension = ".jpg"; // image format
+        var i = "1";
+        
+        $(function imageloop(){
+          $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + i + fileextension + ")" ).appendTo("body");
+          //$("<img />").attr('src', dir + i + fileextension ).appendTo("#testDiv" + i);
+          if (i<4){
+            i++;
+            imageloop();
+          };
+        });   
+      });
+    
+    </script>
+
 
   </body>
     
-
     
 </html>
