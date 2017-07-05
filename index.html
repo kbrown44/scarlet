@@ -7,7 +7,6 @@
     <link rel="icon" href="images/icon/favicon.png">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
     
   <body>
@@ -16,7 +15,7 @@
       <div id="menuMain">
         <img id="logo" src="images/icon/logo_white.png">
         <div id="menuTexts">
-          <a href="#"><h2 class="menuText">Gallery</h2></a>
+          <a href="javascript:menuClose();"><h2 class="menuText">Gallery</h2></a>
           <a href="about/"><h2 class="menuText">About</h2></a>
           <a href="contact/"><h2 class="menuText">Contact</h2></a>
         </div>
@@ -26,24 +25,25 @@
 
     
     <!-- SCRIPTS -->
+    
     <script src="assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <script>
       $(document).ready(function(){
-        var dir = "images/gallery/"; // folder location
+        var dir = "images/thumbnail/"; // folder location
         var fileextension = ".jpg"; // image format
         var i = "1";
         
         $(function imageloop(){
           $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + i + fileextension + ")" ).appendTo("body");
           //$("<img />").attr('src', dir + i + fileextension ).appendTo("#testDiv" + i);
-          if (i<4){
+          if (i<15){
             i++;
             imageloop();
           };
         });   
       });
-    
     </script>
 
 
