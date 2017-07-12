@@ -2,30 +2,30 @@
 
 var logoShift = document.getElementById("logo");
 var menuAppear = document.getElementById("menuTexts");
-var x = 0;
+var x = true;
 
 
 
 //******MENU APPEAR******
 
   logoShift.onclick = function () {
-    if (x == 0) {   
+    if (x == true) {   
         menuAppear.style.display = "block";
         logoShift.style.margin = "2em 0 0.5em 0";
-        x = 1;
+        x = false;
       }
   
     else {   
         menuAppear.style.display = "none";
-        logoShift.style.margin = "2em 0 3em 0";
-        x = 0;
+        logoShift.style.margin = "2em 0 1em 0";
+        x = true;
       }
   }
   
   function menuClose() {
     menuAppear.style.display = "none";
     logoShift.style.margin = "2em 0 3em 0";
-    x = 0;
+    x = true;
     
   }
 

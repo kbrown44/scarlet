@@ -21,9 +21,10 @@
         </div>
       </div>
       </center>
-    <div id="gallery">
-    
-    </div>
+    <!--<div id="left"></div>
+    <div id="right"></div>-->
+    <div id="gallery"></div>
+
       
 
     
@@ -47,10 +48,40 @@
           };
         });   
       });
+
+    </script>
+    
+    <script>
+      
+      var x = "1";
+      if(x == 1){
+          
+      $("#gallery").scroll(function() {
+        if($("#gallery").scrollLeft() + 400 >  $("#gallery").width() && x<2) {
+          x++;
+          $(document).ready(function(){
+            var dir = "images/thumbnail/"; // folder location
+            var fileextension = ".jpg"; // image format
+            var k = "1";
+        
+            $(function imageloop(){
+              $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + k + fileextension + ")" ).appendTo("#gallery");
+              if (k<15){
+                k++;
+                imageloop();
+          };
+            });   
+          });
+        }
+      });}
     </script>
 
 
   </body>
+  
+  <footer>
+    <center><p id="footer">&copy; Scarlet Studios, Inc. All Rights Reserved.</p></center>
+  </footer>
     
     
 </html>
