@@ -7,10 +7,13 @@
     <link rel="icon" href="images/icon/favicon.png">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
     
+  
   <body>
     
+    <!-- LOGO & MENU -->
     <center>
       <div id="menuMain">
         <img id="logo" src="images/icon/logo_white.png">
@@ -21,67 +24,22 @@
         </div>
       </div>
       </center>
-    <!--<div id="left"></div>
-    <div id="right"></div>-->
+    
+    
+    <!-- GALLERY -->
+    <div id="left"></div>
+    <div id="right"></div>
     <div id="gallery"></div>
-
-      
 
     
     <!-- SCRIPTS -->
-    
     <script src="assets/js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <script>
-      $(document).ready(function(){
-        var dir = "images/thumbnail/"; // folder location
-        var fileextension = ".jpg"; // image format
-        var i = "1";
-        
-        $(function imageloop(){
-          $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + i + fileextension + ")" ).appendTo("#gallery");
-          //$("<img />").attr('src', dir + i + fileextension ).appendTo("#testDiv" + i);
-          if (i<15){
-            i++;
-            imageloop();
-          };
-        });   
-      });
-
-    </script>
-    
-    <script>
-      
-      var x = "1";
-      if(x == 1){
-          
-      $("#gallery").scroll(function() {
-        if($("#gallery").scrollLeft() + 400 >  $("#gallery").width() && x<2) {
-          x++;
-          $(document).ready(function(){
-            var dir = "images/thumbnail/"; // folder location
-            var fileextension = ".jpg"; // image format
-            var k = "1";
-        
-            $(function imageloop(){
-              $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + k + fileextension + ")" ).appendTo("#gallery");
-              if (k<15){
-                k++;
-                imageloop();
-          };
-            });   
-          });
-        }
-      });}
-    </script>
-
-
   </body>
   
+  
   <footer>
-    <center><p id="footer">&copy; Scarlet Studios, Inc. All Rights Reserved.</p></center>
+    <p id="footer">&copy; Scarlet Studios, Inc. All Rights Reserved.</p>
   </footer>
-    
     
 </html>

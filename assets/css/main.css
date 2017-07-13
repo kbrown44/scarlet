@@ -35,8 +35,9 @@ body {
   background-repeat: no-repeat;
   border: 4px solid #fff;
   transform: rotate(45deg);
+  z-index: 2;
 
-  margin: 0 2.5em 2em 2.5em;
+  margin: 0 3em 3em 3em;
   
   animation: spin1 0.2s;
   animation-timing-function: ease;
@@ -93,22 +94,27 @@ body {
   color: #fff;
   font-size: 0.6em;
   font-weight: 100;
+  margin-left: calc(50% - 113.47px);
 }
 
-
+#gallery::-webkit-scrollbar { 
+    display: none; 
+}
 
 #left {
   position: fixed;
-  background-color: aqua;
-  height: 100%;
-  width: 150px;
+  opacity: 0;
+  height: 60%;
+  width: 10%;
   float: left;
+  z-index: 1;
 }
 
 #right {
   position: fixed;
-  background-color: blueviolet;
-  height: 100%;
-  width: 150px;
+  opacity: 0;
+  height: 60%;
+  width: 10%;
   right: 0;
+  z-index: 1;
 }
