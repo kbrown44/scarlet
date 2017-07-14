@@ -4,8 +4,16 @@ var logoShift = document.getElementById("logo");
 var menuAppear = document.getElementById("menuTexts");
 var left = document.getElementById("left");
 var right = document.getElementById("right");
+var leftArrow = document.getElementById("leftArrow");
+var rightArrow = document.getElementById("rightArrow");
 var gallery = document.getElementById("gallery");
-var x = true;
+var modal = document.getElementById("modal");
+var close = document.getElementById("close");
+var modalImg = document.getElementById("modalImg");
+var images = 15; //Number of Images to Be Loaded, start at '0'
+var amount = ''; //Hold for Hover Scroll Effect
+var x = true; //Boolean for Menu Apprearing
+var place = '0'; //Pointer for Gallery
 
 
 //******MENU APPEAR******
@@ -49,15 +57,62 @@ logoShift.onmouseover = function () {
   logoShift.style.animationIterationCount = "1";
 }
 
+
+close.onmouseout = function () {
+  close.style.animation = "spin6 0.3s";
+  close.style.animationFillMode = "forwards";
+  close.style.animationTimingFunction = "ease";
+  close.style.animationIterationCount = "1";
+}
+
+close.onmouseover = function () {
+  close.style.animation = "spin5 0.5s";
+  close.style.animationFillMode = "forwards";
+  close.style.animationTimingFunction = "ease";
+  close.style.animationIterationCount = "1";
+}
+
+leftArrow.onmouseout = function () {
+  leftArrow.style.animation = "spin6 0.2s";
+  leftArrow.style.animationFillMode = "forwards";
+  leftArrow.style.animationTimingFunction = "ease";
+  leftArrow.style.animationIterationCount = "1";
+}
+
+leftArrow.onmouseover = function () {
+  leftArrow.style.animation = "spin5 0.3s";
+  leftArrow.style.animationFillMode = "forwards";
+  leftArrow.style.animationTimingFunction = "ease";
+  leftArrow.style.animationIterationCount = "1";
+}
+
+rightArrow.onmouseout = function () {
+  rightArrow.style.animation = "spin8 0.2s";
+  rightArrow.style.animationFillMode = "forwards";
+  rightArrow.style.animationTimingFunction = "ease";
+  rightArrow.style.animationIterationCount = "1";
+}
+
+rightArrow.onmouseover = function () {
+  rightArrow.style.animation = "spin7 0.3s";
+  rightArrow.style.animationFillMode = "forwards";
+  rightArrow.style.animationTimingFunction = "ease";
+  rightArrow.style.animationIterationCount = "1";
+}
+
+
+
+//******LOAD IMAGES******
+
 $(document).ready(function(){
         var dir = "images/thumbnail/"; // folder location
         var fileextension = ".jpg"; // image format
-        var i = "1";
+        var i = "0";
         
         $(function imageloop(){
-          $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + i + fileextension + ")" ).appendTo("#gallery");
+          $("<div  />").attr('class', "picDiv" ).attr('style', "background-image:url(" + dir + i + fileextension + ")" ).attr('onclick', "javascript:firstOpen(" + i + ");").appendTo("#gallery");
           //$("<img />").attr('src', dir + i + fileextension ).appendTo("#testDiv" + i);
-          if (i<15){
+          if (i < images){
             i++;
             imageloop();
           };
@@ -66,8 +121,6 @@ $(document).ready(function(){
 
 
 //******SCROLL GALLERY******
-
-var amount = '';
 
 function scroll() {
   $('#gallery').animate({
@@ -92,3 +145,41 @@ $('#left').hover(function() {
 }, function() {
       amount = '';
     });
+
+
+//******MODAL GALLERY******
+
+function openModal() {
+  modal.style.display = "block";
+  close.style.animation = "zoom 0.5s";
+  close.style.animationTimingFunction = "ease";
+  close.style.animationIterationCount = "1";
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+function firstOpen(z) {
+  place = z;
+  var dir = "images/gallery/"; // folder location
+  var fileextension = ".jpg"; // image format
+  modalImg.src = dir + z + fileextension; // Change Image Source
+  openModal();
+}
+
+function changeLeft() {
+  var dir = "images/gallery/"; // folder location
+  var fileextension = ".jpg"; // image format
+  place--;
+  if(place < 0){place = images}
+  modalImg.src = dir + place + fileextension; // Change Image Source
+}
+
+function changeRight() {
+  var dir = "images/gallery/"; // folder location
+  var fileextension = ".jpg"; // image format
+  place++;
+  if(place > images){place = 0}
+  modalImg.src = dir + place + fileextension; // Change Image Source
+}
