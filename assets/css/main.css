@@ -22,12 +22,30 @@ body {
     background-color: black;
 }
 
+p {
+  color: #fff;
+  font-family: 'Audiowide', cursive;
+}
+
 #footer {
   font-family: 'Audiowide', cursive;
   color: #fff;
   font-size: 0.6em;
   font-weight: 100;
   margin-left: calc(50% - 113.47px);
+}
+
+h3 {
+  color: #fff;
+  font-family: 'Black Ops One', cursive;
+}
+
+.red{
+  color: #e70600;
+}
+
+.white {
+  color: #fff;
 }
 
 
@@ -188,6 +206,110 @@ body {
   padding: 0.8%;
   margin-top: 4em;
   max-height: 50px;
+  animation-name: zoom;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+.fa-arrow-left:hover, .fa-arrow-right:hover {
+  color: #830805;
+  background-color: #e70600;
+}
+
+
+
+/* ---------- CONTACT ---------- */
+
+#contContent {
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 4em 0 11em 0;
+}
+
+.fa-envelope {
+  color: #e70600;
+  background-color: #830805;
+  padding: 20px;
+  border-radius: 50%;
+  margin: 0 5% 0 5%;
+  flex: none;
+}
+
+.fa-instagram {
+  color: #e70600;
+  background-color: #830805;
+  padding: 19px 25px 19px 25px;
+  border-radius: 50%;
+  margin: 0 5% 0 5%;
+  flex: none;
+}
+
+.fa-envelope:hover, .fa-instagram:hover {
+  color: #830805;
+  background-color: #e70600;
+  cursor: pointer;
+}
+
+
+
+/* ---------- ABOUT ---------- */
+
+#aboutLeft {
+  float: left;
+  width: 20%;
+  height: 400px;
+  position: relative;
+}
+
+#aboutCenter {
+  float: left;
+  width: 56%;
+  height: 400px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#aboutRight {
+  float: left;
+  width: 20%;
+  height: 400px;
+  position: relative;
+}
+
+.aboutImg {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#aboutText {
+  font-size: 14px;
+  text-indent: 50px;
+  text-align: justify;
+  line-height: 140%;
+  color: #ccc;
+}
+
+.title {
+  color: #e70600;
+  font-family: 'Black Ops One', cursive;
+  font-size: 20px;
+}
+
+#contactLink {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Black Ops One', cursive;
+}
+
+#contactLink:hover {
+  color: #e70600;
 }
 
 
@@ -210,4 +332,41 @@ body {
   #modalImg {
     height: 40%;
   }
+}
+
+@media (max-width: 500px) {
+  #gallery {
+    padding: 3.5em 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+    margin-bottom: 8em;
+    animation: none;
+  }
+
+  .picDiv {
+    flex: none;
+    z-index: 2;
+    transform: rotate(0deg);
+    animation: none;
+
+    margin-left: calc(50% - 75px);
+  }
+  
+  .picDiv:hover {
+    animation: none;
+    opacity: 0.85;
+  }
+  
+  #logo {
+    width: 17em;
+    margin-bottom: 0;
+  }
+  
+  .aboutImg {
+    display: none;
+  }
+  
 }

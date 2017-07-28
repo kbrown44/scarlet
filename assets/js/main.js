@@ -72,34 +72,6 @@ close.onmouseover = function () {
   close.style.animationIterationCount = "1";
 }
 
-leftArrow.onmouseout = function () {
-  leftArrow.style.animation = "spin6 0.2s";
-  leftArrow.style.animationFillMode = "forwards";
-  leftArrow.style.animationTimingFunction = "ease";
-  leftArrow.style.animationIterationCount = "1";
-}
-
-leftArrow.onmouseover = function () {
-  leftArrow.style.animation = "spin5 0.3s";
-  leftArrow.style.animationFillMode = "forwards";
-  leftArrow.style.animationTimingFunction = "ease";
-  leftArrow.style.animationIterationCount = "1";
-}
-
-rightArrow.onmouseout = function () {
-  rightArrow.style.animation = "spin8 0.2s";
-  rightArrow.style.animationFillMode = "forwards";
-  rightArrow.style.animationTimingFunction = "ease";
-  rightArrow.style.animationIterationCount = "1";
-}
-
-rightArrow.onmouseover = function () {
-  rightArrow.style.animation = "spin7 0.3s";
-  rightArrow.style.animationFillMode = "forwards";
-  rightArrow.style.animationTimingFunction = "ease";
-  rightArrow.style.animationIterationCount = "1";
-}
-
 
 
 //******LOAD IMAGES******
