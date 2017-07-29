@@ -146,7 +146,7 @@ function firstOpen(z) {
   var dir = "images/gallery/"; // folder location
   var fileextension = ".jpg"; // image format
   modalImg.src = dir + z + fileextension; // Change Image Source
-  imageSize();
+  setTimeout(imageSize, 10);
   openModal();
 }
 
@@ -156,7 +156,7 @@ function changeLeft() {
   place--;
   if(place < 0){place = images}
   modalImg.src = dir + place + fileextension; // Change Image Source
-  imageSize();
+  setTimeout(imageSize, 10);
 }
 
 function changeRight() {
@@ -165,5 +165,5 @@ function changeRight() {
   place++;
   if(place > images){place = 0}
   modalImg.src = dir + place + fileextension; // Change Image Source
-  imageSize();
+  setTimeout(imageSize, 10);
 }
