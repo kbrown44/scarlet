@@ -173,13 +173,12 @@ h3 {
 }
 
 #modalImg {
-  height: 75%;
   border: 5px solid #fff;
-  flex: none;
   animation-name: zoom;
   animation-duration: 0.4s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
+  pointer-events: none;
   margin: 0 30px 0 30px;
 }
 
@@ -227,7 +226,7 @@ h3 {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  margin: 4em 0 11em 0;
+  margin: 3em 0 9em 0;
 }
 
 .fa-envelope {
@@ -248,7 +247,16 @@ h3 {
   flex: none;
 }
 
-.fa-envelope:hover, .fa-instagram:hover {
+.fa-twitter {
+  color: #e70600;
+  background-color: #830805;
+  padding: 19px 25px 19px 25px;
+  border-radius: 50%;
+  margin: 0 5% 0 5%;
+  flex: none;
+}
+
+.fa-envelope:hover, .fa-instagram:hover, .fa-twitter:hover {
   color: #830805;
   background-color: #e70600;
   cursor: pointer;
@@ -286,6 +294,7 @@ h3 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
 #aboutText {
@@ -328,9 +337,28 @@ h3 {
   }
 }
 
+@media (max-width: 675px) {
+  #aboutText {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 630px) {
   #modalImg {
     height: 40%;
+  }
+}
+
+@media (max-width: 590px) {
+  #aboutLeft, #aboutRight {
+    display: none;
+  }
+  
+  #aboutCenter {
+    float: none;
+    width: 300px;
+    height: 400px;
+    margin-left: calc(50% - 150px);
   }
 }
 
@@ -363,10 +391,5 @@ h3 {
   #logo {
     width: 17em;
     margin-bottom: 0;
-  }
-  
-  .aboutImg {
-    display: none;
-  }
-  
+  }  
 }
