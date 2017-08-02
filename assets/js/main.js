@@ -129,7 +129,7 @@ function openModal() {
 }
 
 function imageSize() {
-  if(modalImg.height < modalImg.width/2){
+  if(modalImg.height < modalImg.width/1.7){
     modalImg.style.maxHeight = "45%";
   }
   else{
@@ -154,7 +154,7 @@ function changeLeft() {
   var dir = "images/gallery/"; // folder location
   var fileextension = ".jpg"; // image format
   place--;
-  if(place < 0){place = images}
+  if(place < 0){place = images;}
   modalImg.src = dir + place + fileextension; // Change Image Source
   setTimeout(imageSize, 10);
 }
@@ -163,7 +163,7 @@ function changeRight() {
   var dir = "images/gallery/"; // folder location
   var fileextension = ".jpg"; // image format
   place++;
-  if(place > images){place = 0}
+  if(place > images){place = 0;}
   modalImg.src = dir + place + fileextension; // Change Image Source
   setTimeout(imageSize, 10);
 }
