@@ -9,7 +9,7 @@ var rightArrow = document.getElementById("rightArrow");
 var gallery = document.getElementById("gallery");
 var modal = document.getElementById("modal");
 var close = document.getElementById("close");
-var modalImg = document.getElementById("modalImg");
+var modalDiv = document.getElementById("modalDiv");
 var images = 11; //Number of Images to Be Loaded, start at '0'
 var amount = ''; //Hold for Hover Scroll Effect
 var x = true; //Boolean for Menu Apprearing
@@ -128,14 +128,7 @@ function openModal() {
   close.style.animationIterationCount = "1";
 }
 
-function imageSize() {
-  if(modalImg.height < modalImg.width/1.7){
-    modalImg.style.maxHeight = "45%";
-  }
-  else{
-    modalImg.style.maxHeight = "80%";
-  }
-}
+
 
 function closeModal() {
   modal.style.display = "none";
@@ -145,8 +138,7 @@ function firstOpen(z) {
   place = z;
   var dir = "images/gallery/"; // folder location
   var fileextension = ".jpg"; // image format
-  modalImg.src = dir + z + fileextension; // Change Image Source
-  setTimeout(imageSize, 10);
+  modalDiv.style.backgroundImage = "url(" + dir + z + fileextension + ")"; // Change Image Source
   openModal();
 }
 
@@ -155,8 +147,7 @@ function changeLeft() {
   var fileextension = ".jpg"; // image format
   place--;
   if(place < 0){place = images;}
-  modalImg.src = dir + place + fileextension; // Change Image Source
-  setTimeout(imageSize, 10);
+  modalDiv.style.backgroundImage = "url(" + dir + place + fileextension + ")"; // Change Image Source
 }
 
 function changeRight() {
@@ -164,6 +155,5 @@ function changeRight() {
   var fileextension = ".jpg"; // image format
   place++;
   if(place > images){place = 0;}
-  modalImg.src = dir + place + fileextension; // Change Image Source
-  setTimeout(imageSize, 10);
+  modalDiv.style.backgroundImage = "url(" + dir + place + fileextension + ")"; // Change Image Source
 }

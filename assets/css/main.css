@@ -15,11 +15,13 @@
 /* ---------- GENERAL ---------- */
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
-    background-color: black;
+  background-color: black;
+  min-width: 400px;
+  min-height: 250px;
 }
 
 p {
@@ -154,7 +156,7 @@ h3 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1000; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding: 5vh 0 5vh 0;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -170,16 +172,22 @@ h3 {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  z-index: 1;
 }
 
-#modalImg {
-  border: 5px solid #fff;
+#modalDiv {
+  width: 79%;
+  height: 90vh;
+  flex: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
   animation-name: zoom;
   animation-duration: 0.4s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   pointer-events: none;
-  margin: 0 30px 0 30px;
+  margin: 0 10px 0 10px;
 }
 
 #tempImg {
@@ -191,6 +199,7 @@ h3 {
   top: 20px;
   right: 40px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .fa-times-circle {
@@ -200,14 +209,15 @@ h3 {
   padding: 8% 16% 8% 16%;
 }
 
-.fa-arrow-left, .fa-arrow-right {
+#leftArrow1, #leftArrow2, #rightArrow1, #rightArrow2 {
   color: #e70600;
+  flex: none;
   position: left;
   cursor: pointer;
   background-color: #830805;
   border-radius: 20%;
   padding: 0.8%;
-  margin-top: 4em;
+  margin-top: 40vh;
   max-height: 50px;
   animation-name: zoom;
   animation-duration: 0.3s;
@@ -215,7 +225,11 @@ h3 {
   animation-timing-function: ease;
 }
 
-.fa-arrow-left:hover, .fa-arrow-right:hover {
+#arrows {
+  display: none;
+}
+
+#leftArrow1:hover, #rightArrow1:hover, #leftArrow2:hover, #rightArrow2:hover {
   color: #830805;
   background-color: #e70600;
 }
@@ -329,17 +343,34 @@ h3 {
 
 /* ---------- RESPONSIVE ---------- */
 
-@media (max-height: 370px) {
-  .fa-arrow-left, .fa-arrow-right {
-    margin-top: 0;
+@media (max-width: 1000px) {
+  #leftArrow1, #rightArrow1 {
+    display: none;
+  }
+  
+  #leftArrow2, #rightArrow2 {
+    margin: 0 15% 0 15%;
+  }
+  
+  #modalContent {
+    flex-wrap: wrap;
+  }
+  
+  #arrows {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 52px;
+  }
+  
+  #modalDiv {
+    width: 94%;
+    height: 70vh;
+    margin: 0 0 0 0;
+    flex: none;
   }
 }
 
-@media (max-width: 900px) {
-  #modalImg {
-    height: 60%;
-  }
-}
 
 @media (max-width: 675px) {
   #aboutText {
@@ -347,11 +378,6 @@ h3 {
   }
 }
 
-@media (max-width: 630px) {
-  #modalImg {
-    height: 40%;
-  }
-}
 
 @media (max-width: 590px) {
   #aboutLeft, #aboutRight {
@@ -365,6 +391,7 @@ h3 {
     margin-left: calc(50% - 150px);
   }
 }
+
 
 @media (max-width: 500px) {
   #gallery {
